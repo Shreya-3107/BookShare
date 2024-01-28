@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./assets/css/display.css"
+import Card from "./Card";
 
 function Display() {
   const [postDetails, setPostDetails] = useState([]);
@@ -8,14 +10,41 @@ function Display() {
     axios.get("/display").then((res) => {
       const resData = res.data;
       setPostDetails(resData);
-
-      postDetails.map((post) => post.title + " " + post.author + "\n");
     });
   });
 
   return (
-    <div>
-      <button>
+    <div className="display-container">
+    <div className="display-holder">
+
+
+    <div className="display-header ">
+            <h1>BookShare</h1>
+        </div>
+
+        <div className="display-content">
+            <div className="display-grid">
+            {postDetails.map((post) =>(
+                    <Card post = {post} />))}
+            </div>
+            <button className="addcard-button">
+        <Link to="/addBook">Add Card</Link>
+      </button>
+        </div>
+        
+    </div>
+        
+    </div>
+  );
+}
+
+export default Display;
+
+
+{/* <div className="display-container">
+    <div className="display-header">
+            Header
+      <button >
         <Link to="/addBook">Add Card</Link>
       </button>
       <br></br>
@@ -34,8 +63,5 @@ function Display() {
             </div>
         ))}
       </div>
-    </div>
-  );
-}
-
-export default Display;
+      </div>
+    </div> */}
