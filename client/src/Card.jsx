@@ -10,16 +10,18 @@ function Card({post}) {
       <div className='card-info'>
        
        <div className='post-author'>
-       Author:{post.author}
+       <span>Author :  &nbsp;</span>
+       {post.author}
        </div>
        <div className='post-title'>
-       Title:{post.title}
+       <span>Title : &nbsp;</span>{post.title}
        </div>
        <div className='post-review'>
-       Review:{post.review}
+       <span>Reviews :&nbsp;</span>{post.review}
        </div>
        <div className='post-rate'>
-       Rage : &#8377; {post.rate}/month
+       <span>Rate :&nbsp;</span>
+        &#8377; {post.rate}/month
        </div>
       </div>
     </div>
