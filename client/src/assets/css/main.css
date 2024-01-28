@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+:root {
+    /* --primary--color : rgb(88, 129, 87);
+    --secondary--color : rgb(163, 177, 138);
+    --accent--color : rgb(218, 215, 205); */
+    --primary--color :rgb(50, 150, 143);
+    --primary--color2 :rgb(181, 247, 243);
+    /* --secondary--color :rgb(238, 242, 240); */
+    --secondary--color : white;
+    --accent--color : rgb(3, 34, 32);
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+}
