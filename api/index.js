@@ -1,13 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cookieParser = require('cookie-parser');
+
 const dotenv = require('dotenv');
-const jwt = require('jsonwebtoken');
+
 const cors = require('cors');
-const bcrypt = require('bcryptjs');
-const ws = require('ws');
-const fs = require('fs');
-const notifier = require('node-notifier');
+
 const BookInfoModel = require('./models/BookInfo');
 
 
