@@ -1,13 +1,19 @@
 import React from 'react'
 import "./assets/css/display.css"
+import { useNavigate } from "react-router-dom";
 
-function Card({post}) {
+
+function Card({post,onClick}) {
+  const navigate = useNavigate();
   return (
-    <div className='card-holder'>
+  
+    <div className={'card-holder'+(post.isRented?" opacity-70":" ")} onClick={() =>(navigate("/rentBook",{state : post , replace: true}))}>
+
+   
       <div className='card-img'>
-      <img  src='' className='book-img'/>
+      <img  src='' className='book-img '/>
       </div>
-      <div className='card-info'>
+      <div className={"card-info"}>
        
        <div className='post-author'>
        <span>Author :  &nbsp;</span>
@@ -23,8 +29,11 @@ function Card({post}) {
        <span>Rate :&nbsp;</span>
         &#8377; {post.rate}/month
        </div>
+   
       </div>
-    </div>
+      {post.isRented?<div className='rented-warning'> <h1>Rented</h1></div>:""}
+      </div>
+  
   )
 }
 

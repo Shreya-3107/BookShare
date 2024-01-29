@@ -1,6 +1,9 @@
 import {useContext, useState} from "react";
 import axios from "axios";
 import "./assets/css/addBook.css";
+import "./assets/css/main.css"
+import { Link , useNavigate } from "react-router-dom";
+
 
 
 export default function AddBook() {
@@ -12,6 +15,8 @@ export default function AddBook() {
   const [mobile , setMobile] = useState("");
   const [email , setEmail] = useState("");
   const [review , setReview] = useState("");
+
+  const navigate = useNavigate();
  
   const details = {
     title,
@@ -26,7 +31,9 @@ export default function AddBook() {
 
   async function handleSubmit(ev) {
     ev.preventDefault();
-    const {data} = await axios.post("addBook", details);  
+    navigate("/" ,{replace: true})
+    const {data} = await axios.post("addBook", details); 
+     
   }
   
   return (
@@ -63,7 +70,7 @@ export default function AddBook() {
                 <label htmlFor="mail_id">Mail Id</label>
                 <input type="email" id="mail_id" name="mail_id"
                  onChange={ev => setEmail(ev.target.value)}></input><br/>
-                <input type="submit" className="button"></input>
+                <button type="submit" className="button" >Submit</button>
             </div>
         </form>
     </div>

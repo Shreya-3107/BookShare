@@ -10,6 +10,7 @@ const BookInfoSchema = new mongoose.Schema({
   mobile : Number,
   email : String,
   img : String,
+  isRented : Boolean,
 }, {timestamps:true});
 
 const BookInfoModel = mongoose.model('BookInfo', BookInfoSchema);

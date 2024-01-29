@@ -1,17 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , Navigate} from "react-router-dom";
 import "./assets/css/display.css"
+import "./assets/css/main.css"
 import Card from "./Card";
+
 
 function Display() {
   const [postDetails, setPostDetails] = useState([]);
+  const [selectedUser , setSelectedUser] = useState("");
   useEffect(() => {
     axios.get("/display").then((res) => {
       const resData = res.data;
       setPostDetails(resData);
     });
   });
+
+ 
 
   return (
     <div className="display-container">
@@ -25,10 +30,12 @@ function Display() {
         <div className="display-content">
             <div className="display-grid">
             {postDetails.map((post) =>(
-                    <Card post = {post} />))}
-            </div>
+                    <Card key={post._id} post = {post} onClick={()=>setSelectedUser(post._id)} />))}
+            </div>{selectedUser}
+           
             <button className="addcard-button">
-        <Link to="/addBook">Add Card</Link>
+        <Link to="/addBook">Add Book</Link>
+       
       </button>
         </div>
         
