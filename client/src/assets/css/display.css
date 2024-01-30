@@ -123,9 +123,20 @@
   padding: 15px;
   border-radius: 30px;
   border: 2px solid var(--accent);
-  box-shadow: 2px 2px 15px var(--accent);
+  /* box-shadow: 0px 0px 5px var(--accent); */
   font-weight: 700;
   font-size: 15px;
+  transition: 0.5s;
+}
+
+.addcard-button:hover{
+  scale: 1.1;
+  box-shadow: 0px 0px 5px var(--accent);
+  transition: 0.5s;
+  background-color: var(--accent);
+  color: var(--primary);
+  font-weight: 700;
+
 }
 
 .card-info span {

@@ -6,7 +6,6 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 
 const BookInfoModel = require("./models/BookInfo");
-const ImageModel = require("./models/ImageModel")
 const multer = require("multer");
 
 dotenv.config();

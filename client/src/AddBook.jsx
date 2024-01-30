@@ -76,7 +76,7 @@ export default function AddBook() {
                     </div>
                 </div>
                 <div id="submit">
-                    <input type="submit" className="submitButton button"></input>
+                    <button type="submit" className="submitButton button">Submit</button>
                 </div>
             </form>
         </div>
