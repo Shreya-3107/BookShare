@@ -15,19 +15,24 @@
     box-shadow: 5px 5px 25px var(--accent);
 }
 .info-disp{
-    padding: 30px;
+
 }
 .center-align{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.image-display{
-    height: 300px;
-    width: 225px;
+.image-display img{
+    height: 500px;
+    width: 500px;
     object-fit: contain;
-    border: 1px solid var(--accent);
-    margin: 10px;
+}
+img{
+
+    object-fit:fill;
+    border-radius: 30px;
+
+  
 }
 .author-disp{
     font-size: 25px;

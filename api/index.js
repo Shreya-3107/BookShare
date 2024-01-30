@@ -6,6 +6,8 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 
 const BookInfoModel = require("./models/BookInfo");
+const ImageModel = require("./models/ImageModel")
+const multer = require("multer");
 
 dotenv.config();
 mongoose.connect(process.env.MONGO_URL);
@@ -21,6 +23,18 @@ app.use(
     origin: process.env.CLIENT_URL,
   })
 );
+
+const Storage = multer.diskStorage({
+  destination : "uploads",
+  filename : (req,file , cb)=>{
+    cb(null,Date.now + file.originalname)
+  }
+})
+
+const upload = multer({
+  storage : Storage 
+}).single("testimage")
+
 
 app.get("/test", (req, res) => {
   res.json("test ok");
@@ -46,11 +60,30 @@ if(details.isRented == false){
     mobile: details.mobile,
     email: details.email,
     isRented : false,
-    // img : String,
+    myFile :details.myFile
   });
 }
  
 });
+
+
+app.post("/upload" , (req,res)=>{
+  upload(req,res,(err)=>{
+    if(err){
+      console.log(err);
+    }
+    else{
+      const newImage = new ImageModel({
+        name : req.body.name,
+        image : {
+          data :req.file.filename,
+          contentType : "image/png",        
+}
+      })
+      newImage.save().then(()=>res.send("succes :)"))
+    }
+  })
+})
 
 app.get("/display", async (req, res) => {
   const details = await BookInfoModel.find({});

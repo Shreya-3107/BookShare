@@ -29,9 +29,13 @@ function Display() {
 
         <div className="display-content">
             <div className="display-grid">
-            {postDetails.map((post) =>(
-                    <Card key={post._id} post = {post} onClick={()=>setSelectedUser(post._id)} />))}
-            </div>{selectedUser}
+            {postDetails.length != 0? postDetails.map((post) =>(
+                    <Card key={post._id} post = {post} onClick={()=>setSelectedUser(post._id)} />)):
+                    
+                    <div className="no-post-container"><p>No Books Available for now</p></div>}
+            </div>
+            
+
            
             <button className="addcard-button">
         <Link to="/addBook">Add Book</Link>

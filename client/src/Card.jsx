@@ -11,7 +11,7 @@ function Card({post,onClick}) {
 
    
       <div className='card-img'>
-      <img  src='' className='book-img '/>
+      <img  src={post.myFile} className='book-img '/>
       </div>
       <div className={"card-info"}>
        

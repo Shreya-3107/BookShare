@@ -1,5 +1,6 @@
 import axios from "axios";
 import AddBook from "./AddBook";
+import "./assets/css/main.css"
 import {
   BrowserRouter as Router,
   Routes,

@@ -9,10 +9,11 @@ const BookInfoSchema = new mongoose.Schema({
   name : String,
   mobile : Number,
   email : String,
-  img : String,
+  myFile : String,
   isRented : Boolean,
 }, {timestamps:true});
 
 const BookInfoModel = mongoose.model('BookInfo', BookInfoSchema);
 
 module.exports = BookInfoModel;
+

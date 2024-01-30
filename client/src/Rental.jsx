@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation , useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./assets/css/rental.css"
-import "./assets/css/main.css"
+
 
 
 function Rental() {
@@ -22,7 +22,7 @@ function Rental() {
     <div className="main-box">
         <h1 className="form-head ">{post.title}</h1>
         <div className="info-disp center-align">
-            <div className="image-display">display image here</div>
+            <div className="image-display"><img src={post.myFile}></img></div>
             <p className="author-disp">Author:  {post.author}</p>
             <p className="para-disp">{post.review}</p>
         </div>
@@ -35,7 +35,7 @@ function Rental() {
         <h1 className="form-head">Checkout</h1>
         <div className="info-disp center-align">
             <button className="checkout-button para-disp rent" onClick={handleRenting}>Rent now</button>
-            <button className="checkout-button para-disp del">Delete from records</button>
+            {/* <button className="checkout-button para-disp del">Delete from records</button> */}
      
         </div>
     </div>
