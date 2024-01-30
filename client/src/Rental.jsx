@@ -17,9 +17,9 @@ function Rental() {
 
   }
   return (
-    <div className="card-details">
+    <div className="main">
     <h1 className="header">Book details!</h1>
-    <div className="main-box">
+    <div className="sub">
         <h1 className="form-head ">{post.title}</h1>
         <div className="info-disp center-align">
             <div className="image-display"><img src={post.myFile}></img></div>

@@ -15,7 +15,7 @@ function Card({post,onClick}) {
       </div>
       <div className={"card-info"}>
        
-       <div className='post-author'>
+       <div className='post-author '>
        <span>Author :  &nbsp;</span>
        {post.author}
        </div>

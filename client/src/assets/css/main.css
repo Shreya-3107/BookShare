@@ -25,6 +25,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.main{
+  height: 100%;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sub{
+  width: 70%;
+    background-color: var(--secondary);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px var(--accent);
+}
 .header{
   background-color: var(--accent);
   width: 70%;

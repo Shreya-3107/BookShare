@@ -19,28 +19,19 @@ function Display() {
  
 
   return (
-    <div className="display-container">
-    <div className="display-holder">
-
-
-    <div className="display-header ">
-            <h1>BookShare</h1>
-        </div>
-
+    <div className="main">
+      <div className="header"><h1>BookShare</h1></div>
+      <div className="sub">
         <div className="display-content">
             <div className="display-grid">
             {postDetails.length != 0? postDetails.map((post) =>(
                     <Card key={post._id} post = {post} onClick={()=>setSelectedUser(post._id)} />)):
-                    
-                    <div className="no-post-container"><p>No Books Available for now</p></div>}
-            </div>
-            
 
-           
+                    <div className="no-post-container"><p>No Books Available for now</p></div>}
+            </div>           
             <button className="addcard-button">
-        <Link to="/addBook">Add Book</Link>
-       
-      </button>
+              <Link to="/addBook">Add Book</Link>
+            </button>
         </div>
         
     </div>

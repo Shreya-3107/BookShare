@@ -39,7 +39,7 @@ if(details.isRented == false){
   await BookInfoModel.updateOne({"_id" : details.id}, { $set : {isRented : true}})
   setTimeout(async()=>{
     await BookInfoModel.deleteOne({"_id" : details.id});
-  },2000)
+  },10000)
  
   console.log("deletion done");
 }else{
