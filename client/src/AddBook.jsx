@@ -45,9 +45,9 @@ export default function AddBook() {
   }
   
   return(
-    <div className="input-new-book">
+    <div className="main">
         <h1 className="header">Add New Book!</h1>
-        <div className="main-box">
+        <div className="sub">
             <form  onSubmit={handleSubmit} method="post">
                 <div className="details">
                     <h1 className="form-head">Book Details:</h1>
@@ -61,7 +61,7 @@ export default function AddBook() {
                         <label for="rate" className="book-label">Rate per month: <span id="hint">(in rupees)</span></label><br/>
                         <input type="number" id="rate" name="rate" className="book-input" placeholder="Eg: 10" onChange={ev => setRate(ev.target.value)}></input>
                         <label for="image_uploads" className="book-label">Image:</label><br/>
-                        <input type="file" id="image_uploads" name="image_uploads" accept="image/*,.pdf" onChange={handleFileUpload}></input><p id="hint">(choose image from your file)</p>
+                        <input type="file" id="image_uploads" name="image_uploads" accept="image/*,.pdf" onChange={handleFileUpload}></input><p id="hint">(File must be bellow 50kb)</p>
                     </div>
                 </div>
                 <div className="details">
